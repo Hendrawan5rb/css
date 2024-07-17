@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Font Styling</title>
+
+    <style>
+        h1 {
+            /* Default font adalah Times New Roman */
+
+            font-family: Arial, Helvetica, sans-serif;
+            /* font-family : nama font, nama font, generic-family */
+            /* cari font Arial di OS user, kalau gak ada cari font Helvetica, kalau masih gak ada cari font dengan generic-family sans-serif */
+
+            /*
+            Untuk mengatur ketebalan font
+            value : 
+            - normal (default)
+            - lighter
+            - bold
+            - bolder
+            - 100 sampai 900 (400 == default)
+            */
+            font-weight: normal;
+
+            /* Huruf kapital semua tapi huruf pertama lebih besar */
+            font-variant: small-caps;
+
+            /*
+            Membuat font menjadi miring
+            - italic = mengubah font menjadi italic jika font nya support
+            - oblique = memaksa font menjadi italic (dimiringkan)
+            */
+            font-style: oblique;
+        }
+
+        #satu {
+            /* CSS memungkinkan font-size yang lebih besar daripada Atribut HTML */
+            /* px adalah size absolut, tidak berubah berapapun size layar user */
+            font-size: 20px;
+
+            font-weight: bold;
+
+            margin: 0;
+        }
+
+        #dua {
+            /*
+            em adalah size relative
+            1em = ukuran font saat ini
+            Jika font-size default browser adalah 16px, maka 1em = 16px
+            */
+            font-size: 2em;
+
+            margin: 0;
+        }
+
+        #tiga {
+            /*
+            em berdasarkan parent font size
+            rem berdasarkan Root (HTML) font size
+            */
+            font-size: 2rem;
+
+            margin: 0;
+        }
+
+        #empat {
+            /* 150% = 1.5em */
+            font-size: 150%;
+            font-weight: ;
+
+            margin: 0;
+        }
+
+        #lima {
+            /*
+            responsive font size
+            vw = viewport width
+            vh = viewport height   
+
+            mengikuti lebar window browser
+            1vw = 1% dari viewport width
+            */
+            font-size: 10vw;
+
+            margin: 0px;
+        }
+
+        #p {
+            /* Jarak antar baris */
+            /* line-height: 40px; */
+
+            /* Shorthand (singkatan) untuk styling font */
+            /*
+            font-style: italic; (opsional)
+            font-variant: small-caps; (opsional)
+            font-weight: bold; (opsional)
+            font-size: 15px; (wajib)
+            line-height: 40px; (opsional)
+            font-family: Arial, Helvetica, sans-serif; (wajib)
+            */
+            font: italic small-caps bold 15px/40px Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Font Styling</h1>
+    <p id="satu">Satu</p>
+    <p id="dua">Dua</p>
+    <p id="tiga">Tiga</p>
+    <p id="empat">Empat</p>
+    <p id="lima">Lima</p>
+
+    <p id="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, iste. Laboriosam molestias atque,
+        tenetur distinctio in consequuntur earum suscipit omnis facere repellat iure necessitatibus. Dicta enim magnam
+        aliquid dolores mollitia.</p>>
+
+    <font size="7">HTML4</font>
+</body>
+
+</html>
