@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Selector</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1,
+        h2 {
+            color: salmon;
+        }
+
+        h2 {
+            text-decoration: underline;
+        }
+
+        ul {
+            color: red;
+        }
+
+        ul li a {
+            color: darkgoldenrod;
+        }
+
+        ol li a {
+            color: lightslategray;
+        }
+
+        /* id tidak disarankan digunakan untuk CSS, lebih baik gunakan class. */
+        #p1 {
+            color: blue;
+        }
+
+        .p2 {
+            font-weight: bold;
+        }
+
+        .p2 {
+            color: orchid;
+        }
+
+        p.p2 {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello Zawarudo</h1>
+
+    <ul>
+        <li><a href="">Satu</a></li>
+        <li><a href="">Dua</a></li>
+        <li><a href="">Tiga</a></li>
+        <li><a href="">Empat</a></li>
+        <li><a href="">Lima</a></li>
+    </ul>
+
+    <ol>
+        <li><a href="">1</a></li>
+        <li><a href="">2</a></li>
+        <li><a href="">3</a></li>
+        <li><a href="">4</a></li>
+        <li><a href="">5</a></li>
+    </ol>
+
+    <a class="p2" href="">Link</a>
+
+    <h2>Judul</h2>
+
+    <!-- id tidak bisa pakai spasi -->
+    <p id="p1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A molestiae voluptas culpa ducimus aut doloribus unde,
+        at dicta ab et praesentium, eum quod laboriosam porro. Ut, eos impedit. Fugiat, excepturi.
+    </p>
+
+    <!-- menambahkan 2 atau lebih class menggunakan spasi -->
+    <p class="p1 p2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A molestiae voluptas culpa ducimus aut doloribus unde,
+        at dicta ab et praesentium, eum quod laboriosam porro. Ut, eos impedit. Fugiat, excepturi.
+    </p>
+</body>
+
+</html>
