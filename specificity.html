@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Specificity</title>
+
+    <style>
+        /* Setiap deklarasi selector CSS memiliki BERAT yang berbeda. Berat tersebut menentukan seberapa spesifik sebuah elemen dapat dipilih oleh sebuah selector. */
+
+        /*
+        inline = 1000
+        id = 100
+        class = 10
+        element = 1
+        */
+
+        /* Nilainya 100 */
+        #h1 {
+            color: grey;
+        }
+
+        /* Nilainya 10 */
+        .h1 {
+            color: skyblue;
+        }
+
+        /* Nilainya 1 */
+        h1 {
+            color: orange;
+        }
+
+        /* Nilainya 102 (1 id + 2 elements) */
+        ul#sarapan li {
+            color: darkblue;
+        }
+
+        /* Nilainya 10 (Nilai lebih rendah tidak ke-apply) */
+        .favorit {
+            color: brown;
+        }
+
+        /* Supaya lebih spesifik/berat (Nilainya 112) agar ter-apply */
+        /* ul#sarapan li.favorit {
+            color: brown;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- Nilainya 1000 (yang akhirnya di-apply) -->
+    <h1 id="h1" class="h1" style="color: red;">Specificity</h1>
+
+    <ul id="sarapan">
+        <li>Nasi Goreng</li>
+        <li>Roti</li>
+        <li class="favorit">Nasi kuning</li>
+        <li>Mie Goreng</li>
+    </ul>
+</body>
+
+</html>
