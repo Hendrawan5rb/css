@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Pseudo Class</title>
+
+    <style>
+        /* Pseudo Class adalah kelas semu yang dimiliki oleh sebuah elemen HTML yang membuat kita dapat mendefinisikan style pada "keadaan tertentu" dari elemen tersebut */
+
+        /*
+        :link = style default pada sebuah link (<a> yang punya href="")
+        :hover = style ketika kursor mouse berada diatas sebuah link/elemen
+        :active = style ketika sebuah link di klik (keadaan aktif)
+        :visited = style ketika sebuah link sudah pernah dikunjungi sebelumnya (menggunakan browser yang sama)
+
+        dua <a> yang memiliki href="" yang sama akan berubah warnanya kalau salah satunya di klik (visited).
+
+        Baru ada di CSS3
+        :first-child = Element child pertama
+        :last-child = Element child terakhir
+        :nth-child = Element child ke-n. Bisa urutan (1,2,3),bisa pola (2n, 3n+2,4n-1), atau ganjil & genap (odd & even).
+
+        :first-of-type = element pertama dari sebuah jenis tag
+        :last-of-type = element terakhir dari sebuah jenis tag
+        */
+
+        /* style link yang belum di klik */
+        a:link {
+            color: salmon;
+        }
+
+        /* hover link yang belum visited */
+        #link:hover {
+            color: yellowgreen;
+        }
+
+        #link:active {
+            font-size: 20px;
+        }
+
+        #link:visited {
+            color: black;
+        }
+
+        li:first-child a {
+            font-size: 30px;
+        }
+
+        li:last-child a {
+            font-size: 40px;
+        }
+
+        li:nth-child(2) a {
+            margin-left: 20px;
+        }
+
+        /* kelipatan 4 mulai dari 3 */
+        li:nth-child(4n-1) a {
+            margin-left: 40px;
+        }
+
+        /* ganjil */
+        li:nth-child(odd) a {
+            text-decoration: none;
+        }
+
+        /* genap */
+        li:nth-child(even) a:hover {
+            font-size: 50px;
+            text-decoration: line-through;
+        }
+
+        p:first-of-type {
+            color: skyblue;
+        }
+
+        p:last-of-type {
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#" id="link">Link</a>
+
+    <ul>
+        <li><a href="#1">1</a></li>
+        <li><a href="#2">2</a></li>
+        <li><a href="#3">3</a></li>
+        <li><a href="#4">4</a></li>
+        <li><a href="#5">5</a></li>
+        <li><a href="#6">6</a></li>
+        <li><a href="#7">7</a></li>
+        <li><a href="#8">8</a></li>
+        <li><a href="#9">9</a></li>
+        <li><a href="#10">10</a></li>
+    </ul>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ducimus quaerat quisquam aspernatur, magnam
+        pariatur aut libero debitis repudiandae unde, qui consectetur, labore ipsum temporibus quam? Voluptates aperiam
+        commodi quae?
+
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ducimus quaerat quisquam aspernatur, magnam
+        pariatur aut libero debitis repudiandae unde, qui consectetur, labore ipsum temporibus quam? Voluptates aperiam
+        commodi quae?
+    </p>
+</body>
+
+</html>
