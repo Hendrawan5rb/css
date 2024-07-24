@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Display</title>
+
+    <style>
+        div {
+            background-color: green;
+            width: 300px;
+        }
+
+        h1,
+        h2 {
+            background-color: aqua;
+        }
+
+        h3 {
+            display: none;
+        }
+
+        b {
+            background-color: orange;
+
+            /* Tidak pengaruh */
+            width: 300px;
+            height: 300px;
+        }
+
+        strong {
+            background-color: red;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+        }
+
+        li {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Tag <div> default display nya adalah block, sedangkan tag <span> default display nya adalah inline -->
+
+    <!-- Setiap tag pada HTML berada dalam sebuah kotak. Properti display pada CSS mengatur perilaku dari kotak tersebut. -->
+
+    <!-- Setiap tag pada HTML memiliki nilai default untuk properti display (biasanya block atau inline). Tapi kita juga bisa mengubah perilaku  dari tag tersebut dengan mengganti display-nya (tidak direkomendasikan). -->
+
+    <!--
+    Value dari property display ada 4 yaitu : 
+    1. inline
+    - Tidak menambahkan baris baru ketika dibuat
+    - Lebar dan tinggi dari elemen sebesar konten yang ada di dalamnya
+    - Kita tidak bisa mengatur tinggi dan lebar dari elemen inline (kecuali <img>)
+    - Margin dan padding hanya mempengaruhi elemen secara horizontal dan tidak vertikal
+
+    Contoh tag yang default display-nya inline : 
+    b, strong, i, em, a, span, sub, sup, button, input, label, select, textarea
+
+    2. inline-block
+    - Tidak ada elemen yang secara default memiliki properti display: inline-block
+    - Perilaku dasarnya sama dengan elemen inline
+    - Perbedaannya, elemen inline-block dapat kita atur tinggi dan lebarnya
+
+    3. block
+    - Elemen HTML yang secara default menambahkan baris baru ketika dibuat
+    - Jika tidak diatur lebarnya, maka lebar default dari eleman block akan memenuhi lebar dari browser/parent-nya.
+    - Kita dapat mengatur tinggi dan lebar dari elemen block
+    - Di dalam elemen block kita dapat menyimpan tag dengan elemen inline, inline-block, atau bahkan elemen block lagi.
+
+    Contoh tag yang default display-nya block : 
+    h1-h6, p, ol, ul, li, form, hr, div
+
+    4. none
+    - Digunakan untuk menghilangkan suatu elemen
+    -->
+
+    <!--
+    Display default dari elemen bisa di cek lewat Inspect -> Elements -> Computed
+    -->
+
+    <h1>Display</h1>
+
+    <b>Test</b>
+    <strong>Test2</strong>
+
+    <div>
+        <h1>Judul Artikel</h1>
+        <h2>Sub Judul Artikel</h2>
+        <h3>h3 hilang</h3>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti possimus nihil eligendi ducimus quo
+            incidunt, eos perferendis, dolorem distinctio quae tempora. Consectetur aperiam sequi eius autem optio quis,
+            quasi veritatis!
+        </p>
+        <span>Test</span>
+        <span>Test2</span>
+    </div>
+
+    <!-- Shortcut Emmet -->
+    <!-- ul>li*5>a[href=#]{Link $} -->
+    <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+        <li><a href="#">Link 5</a></li>
+    </ul>
+
+</body>
+
+</html>
