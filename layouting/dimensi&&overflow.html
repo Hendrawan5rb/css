@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Dimensi & Overflow</title>
+    <style>
+        .satu {
+            /* Absolut */
+
+            /*
+            Satuan untuk dimensi yang lain (ukuran dunia nyata) : 
+            - in
+            - cm
+            - mm
+            - pt (point) : biasanya digunakan untuk printing design
+            - pc (pica) : biasanya digunakan untuk printing design
+            */
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+
+        .dua {
+            /* Relatif */
+            width: 80%;
+            height: 100px;
+            background-color: khaki;
+        }
+
+        .tiga {
+            /* Relatif */
+            width: 50%;
+            height: 100px;
+            background-color: salmon;
+        }
+
+        /* Kalau dimensi yang diatur hanya salah satu, maka akan menyesuaikan konten */
+        .empat {
+            width: 100px;
+            background-color: gray;
+        }
+
+        .lima {
+            height: 100px;
+            background-color: brown;
+        }
+
+        .enam {
+            width: 150px;
+            height: 100px;
+            background-color: blue;
+            display: inline-block;
+
+            /* Overflow default */
+            overflow: visible;
+        }
+
+        .tujuh {
+            width: 150px;
+            height: 100px;
+            background-color: yellow;
+            display: inline-block;
+
+            /* Kalau kontennya tidak cukup ruang, maka akan memunculkan scroll */
+            overflow: auto;
+        }
+
+        .delapan {
+            width: 150px;
+            height: 100px;
+            background-color: red;
+            display: inline-block;
+
+            overflow: hidden;
+        }
+
+        .sembilan {
+            width: 150px;
+            height: 100px;
+            background-color: green;
+            display: inline-block;
+
+            /* Akan memunculkan scroll tidak peduli apakah konten cukup ruang atau tidak */
+            /* Tergantung browser (Di firefox tidak ada) */
+            overflow: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="satu">Hello Zawarudo</div>
+    <div class="dua">
+        Hello Zawarudo 2
+
+        <div class="tiga">
+            Hello Zawarudo 3
+        </div>
+    </div>
+    <div class="empat">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, illum quos nihil pariatur ratione ipsum,
+        enim, voluptate sapiente illo doloremque asperiores voluptas quidem. Veritatis dignissimos assumenda in iste
+        necessitatibus vero.
+    </div>
+    <div class="lima">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime totam enim quia autem culpa consequatur.
+        Aliquam architecto impedit totam magni ratione, amet velit? Est impedit exercitationem quas eius architecto
+        consectetur.
+    </div>
+    <div class="enam">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus delectus necessitatibus sit
+        reiciendis dolor architecto, ad voluptates sequi alias atque similique accusamus, enim mollitia. Voluptas eum
+        hic illo optio.
+    </div>
+    <div class="tujuh">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus delectus necessitatibus sit
+        reiciendis dolor architecto, ad voluptates sequi alias atque similique accusamus, enim mollitia. Voluptas eum
+        hic illo optio.
+    </div>
+    <div class="delapan">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus delectus necessitatibus sit
+        reiciendis dolor architecto, ad voluptates sequi alias atque similique accusamus, enim mollitia. Voluptas eum
+        hic illo optio.
+    </div>
+    <div class="sembilan">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+</body>
+
+</html>
