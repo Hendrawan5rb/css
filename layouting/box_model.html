@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Box Model</title>
+
+    <style>
+        /*
+        ! BIASANYA JIKA MEMBUAT SEBUAH ELEMEN YANG DIATUR HANYA WIDTH-NYA, SUPAYA HEIGHT-NYA MENYESUAIKAN ISI KONTEN DAN TIDAK KELUAR DARI KOTAKNYA.
+
+        CSS Box Model mendefinisikan 'kotak' yang dihasilkan oleh sebuah elemen, lalu menampiklannya sesuai format visualnya.
+
+        CSS Box Model terdiri dari margin, border, padding, dan content. Yang bisa diatur hanya margin, padding, dan border.
+
+        Setiap elemen HTML berada dalam sebuah kotak
+
+        Untuk membuktikannya, coba Inspect pada Web Browser, lalu tambahkan CSS berikut : 
+
+        * {
+            border: 1px solid red;
+        }
+
+        * adalah selector untuk semua elemen
+
+        Jika kotak merahnya tebal, berarti ada banyak kotak yang bertumpuk.
+
+        Bisa juga menggunakan fitur 3D view di Firefox (sekarang udah gak ada) atau menggunakan plugin.
+        */
+
+        img {
+            width: 600px;
+        }
+
+        .satu {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            margin-left: 100px;
+            margin-top: 20px;
+            margin-bottom: 50px;
+            margin-right: 30px;
+
+            /* Jika ingin melihat margin elemen spesifik di browser klik kanan -> Inspect */
+        }
+
+        .dua {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+
+            /* Margin overlap, posisi tidak berubah karena margin vertical tidak saling menambahkan */
+            margin-top: 20px;
+
+            /* inline dan inline-block menyebabkan ada sedikit jarak horizontal antar elemen walaupun marginnya 0, cara menghilangkannya adalah dengan menghapus "enter" antar elemen */
+            display: inline-block;
+
+            margin-right: 20px;
+
+            margin-bottom: 20px;
+        }
+
+        .tiga {
+            width: 50px;
+            height: 50px;
+            background-color: khaki;
+            display: inline-block;
+
+            /* Margin horizontal menambahkan satu sama lain (tidak overlapping) */
+            margin-left: 30px;
+        }
+
+        .empat {
+            width: 50px;
+            height: 50px;
+            background-color: brown;
+            display: inline-block;
+
+            /* Semua sisi */
+            margin: 50px;
+        }
+
+        .lima {
+            width: 50px;
+            height: 50px;
+            background-color: salmon;
+            display: inline-block;
+        }
+
+        .enam {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+
+            margin-top: -30px;
+
+            /*
+            - padding tidak bisa diberi nilai negatif
+            - padding tidak memiliki nilai auto
+            - padding mempengaruhi ukuran elemen (box bisa jadi lebih besar)
+            */
+            padding: 7px;
+
+            border: 5px solid black;
+        }
+
+        .tujuh {
+            width: 50px;
+            height: 50px;
+            background-color: salmon;
+
+            margin-left: auto;
+            margin-right: auto;
+
+            border: 3px dotted #ffffff;
+        }
+
+        .delapan {
+            width: 50px;
+            height: 50px;
+            background-color: salmon;
+
+            margin-left: auto;
+
+            border: 8px double blue;
+        }
+
+        .sembilan {
+            width: 50px;
+            height: 50px;
+            background-color: salmon;
+
+            margin-right: auto;
+
+            border: 3px dashed yellow;
+        }
+
+        .sepuluh {
+            width: 50px;
+            height: 50px;
+            background-color: salmon;
+
+            /* atas-bawah kanan-kiri */
+            margin: 50px auto;
+
+            /* Bisa satu-satu tapi jarang nulisnya gini */
+            border-width: 5px;
+            border-style: solid;
+            border-color: black;
+        }
+
+        .sebelas {
+            width: 50px;
+            height: 50px;
+            background-color: salmon;
+
+            /* atas kanan-kiri bawah */
+            margin: 50px 40px 30px;
+
+            /* Border juga menambahkan ukuran elemen/kotak sama dengan padding (walaupun cuma beberapa pixel) */
+            border-left: 3px solid black;
+            border-right: 3px dotted blue;
+            border-top: 1px dashed yellow;
+            border-bottom: 7px double red;
+        }
+
+        .duabelas {
+            width: 50px;
+            height: 50px;
+            background-color: salmon;
+
+            /* atas kanan bawah kiri (searah jarum jam) */
+            margin: 50px 60px 70px 80px;
+        }
+
+        /* box-sizing adalah property baru yang ada pada CSS3 yang berfungsi supaya kita tidak perlu mengkalkulasi ulang dimensi yang kita buat jika kita beri padding dan border */
+        .p {
+            width: 600px;
+            margin: 10px auto;
+
+            box-sizing: border-box;
+        }
+
+        .p-satu {
+            /* width: 570px; */
+            background-color: yellowgreen;
+            padding: 10px;
+            border: 5px solid red;
+        }
+
+        .p-dua {
+            /* width: 520px; */
+            background-color: royalblue;
+            padding: 30px;
+            border: 10px dotted black;
+        }
+
+        /* Seperti yang bisa dilihat elemen ini ada jaraknya dari kiri layar (Sebelum CSS Reset) karena banyak elemen memiliki property default misalnya dalam kasus ini body memiliki margin dan padding default. */
+        .reset-test {
+            width: 100px;
+            height: 100px;
+            background-color: darkslateblue;
+            margin: 0;
+        }
+
+        /* CSS Reset bisa menggunakan selector universal(*) tapi tidak disarankan karena kemungkinan berat dikarenakan memberikan margin dan padding pada semua elemen. */
+
+        /* Berikut CSS Reset yang sudah dibuat orang */
+
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+        v2.0 | 20110126
+        License: none (public domain)
+        */
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../img/Bot Model.png" alt="&nbsp;Box Model">
+
+    <div class="satu">1</div>
+    <div class="dua">2</div>
+    <div class="tiga">3</div>
+    <div class="empat">4</div>
+    <div class="lima">5</div>
+    <div class="enam">6 (Margin Minus) Elemen di bawahnya ikut terbawa ke atas</div>
+    <div class="tujuh">7</div>
+    <div class="delapan">8</div>
+    <div class="sembilan">9</div>
+    <div class="sepuluh">10</div>
+    <div class="sebelas">11</div>
+    <div class="duabelas">12</div>
+
+    <div class="p p-satu">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi quaerat nisi illo quod ut
+        doloribus illum, reiciendis quidem praesentium dignissimos. Quae architecto cupiditate numquam error nobis
+        ratione vel est sint?
+    </div>
+
+    <div class="p p-dua">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, eligendi minima? Cupiditate quidem, numquam
+        adipisci, exercitationem veniam fugit vitae rerum tempora natus incidunt unde enim. Sequi accusamus modi
+        recusandae reiciendis.
+    </div>
+
+    <div class="reset-test"></div>
+</body>
+
+</html>
