@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Float</title>
+
+    <style>
+        /* Nilai hex misal #333 berarti sama dengan #333333 (disingkat tiga digit jika angkanya sama semua) */
+
+        /*
+        Float merupakan properti pada CSS untuk mengatur posisi sebuah elemen. Sebuah elemen dapat dipaksa untuk berada di sebelah kiri atau kanan dari parent/pembungkusnya dengan menggunakan properti ini.
+
+        - none (default)
+        - left
+        -right
+
+        Memberikan sebuah element property float menyebabkan element menjadi 'out of flow', artinya element lain pada halaman tidak akan mengenali element tersebut atau dianggap tidak ada.
+
+        Beberapa hal yang dapat dilakukan menggunakan property float : 
+        - text wrapping
+        - image gallery
+        - multi-column layout
+        - dll.
+        */
+
+        .a {
+            width: 100px;
+            height: 100px;
+        }
+
+        .satu {
+            background-color: salmon;
+            float: right;
+        }
+
+        .dua {
+            background-color: khaki;
+        }
+
+        img {
+            width: 400px;
+            float: right;
+        }
+
+        .kotak {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            text-align: center;
+            border: 1px solid black;
+
+            /* Trik supaya tulisan bisa tengah vertikal */
+            line-height: 100px;
+
+            float: left;
+        }
+
+        .container {
+            width: 600px;
+            border: 1px solid black;
+        }
+
+        .kiri {
+            width: 200px;
+            background-color: khaki;
+            float: left;
+        }
+
+        .tengah {
+            width: 200px;
+            background-color: salmon;
+            float: left;
+        }
+
+        .kanan {
+            width: 200px;
+            background-color: saddlebrown;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="satu a">Dianggap tidak ada oleh element di bawahnya</div>
+    <div class="dua a">div ini jadi naik</div>
+
+    <img src="../img/Bot Model.png" alt="&nbsp;Box Model">
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, placeat impedit ducimus explicabo possimus, quod
+        voluptas nihil hic perspiciatis excepturi, quisquam fugiat maxime perferendis aliquid ratione rem ipsa.
+        Repudiandae iure dolores reprehenderit laborum iste, sunt odio atque, alias deleniti dolor voluptate labore
+        quisquam cum! Recusandae, doloremque consectetur exercitationem culpa cumque deleniti, est dolorem incidunt
+        voluptatum fuga voluptas? Ipsa voluptatum eos, adipisci quam soluta id obcaecati, nulla qui quibusdam dolore
+        rerum in velit eligendi repellendus doloribus consequatur natus quia, distinctio provident nemo totam. Quis
+        ipsam doloremque laborum facilis repudiandae, deserunt fugiat ullam id praesentium voluptas libero nulla
+        delectus rem et voluptatum quas reprehenderit? Facere nam aliquid rem minima laborum totam rerum sequi fugit
+        accusantium exercitationem, nostrum mollitia fugiat quisquam, non animi nesciunt, ipsam maxime ipsum commodi
+        eligendi natus consequatur cum reprehenderit? Cum odio repudiandae nihil explicabo, voluptatem iste accusamus
+        reprehenderit doloremque vitae magni magnam nam qui aperiam dolores! Ipsum nulla quas, magni corporis itaque
+        vitae deserunt soluta vero perferendis, ad sit, ut earum quasi illo nam facilis aut laboriosam blanditiis quae
+        iste delectus expedita quos. Nobis earum corporis mollitia? Numquam iure recusandae laborum quos quis,
+        laudantium quidem possimus omnis aperiam. Quibusdam sed tenetur at ad sit neque distinctio non voluptatum
+        doloribus ut iure, tempore maiores recusandae explicabo harum hic ipsa qui, odit quae officiis! Optio cupiditate
+        eius illum, rerum minima non quaerat vitae nemo facilis inventore saepe voluptas dolorum distinctio debitis
+        eligendi obcaecati odit provident velit nulla ratione expedita. Et totam accusantium sunt quod eius illum quam
+        tenetur vitae fugit repellendus velit optio ipsam, magni qui fugiat similique eligendi cumque laborum dolorem
+        nostrum. At quas adipisci harum dolorem facere consequuntur temporibus vitae et tenetur, expedita aliquid magnam
+        numquam odit eaque ducimus soluta necessitatibus aut enim quod repudiandae delectus tempora suscipit! Libero
+        recusandae dolores id ab obcaecati doloremque, praesentium facilis laboriosam impedit.
+    </p>
+
+    <div class="kotak">1</div>
+    <div class="kotak">2</div>
+    <div class="kotak">3</div>
+    <div class="kotak">4</div>
+    <div class="kotak">5</div>
+    <div class="kotak">6</div>
+    <div class="kotak">7</div>
+    <div class="kotak">8</div>
+    <div class="kotak">9</div>
+    <div class="kotak">10</div>
+
+    <div class="container">
+        <div class="kiri">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit culpa, reprehenderit quam aperiam magnam
+            ut veritatis dolorum consectetur voluptatibus eos provident qui accusantium distinctio laborum labore
+            aliquam illum vero unde!
+        </div>
+        <div class="tengah">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi atque placeat ab vero mollitia obcaecati
+            consequatur itaque sapiente ipsum sint eos omnis porro dolor alias deserunt ad, suscipit maiores ut.
+        </div>
+        <div class="kanan">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil quaerat blanditiis, officiis eum eligendi
+            iure, quam numquam libero ab rem delectus error, repudiandae debitis a. Rem eaque laboriosam nihil eligendi.
+        </div>
+    </div>
+
+</body>
+
+</html>
