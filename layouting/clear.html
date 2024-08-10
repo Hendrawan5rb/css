@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Clear</title>
+
+    <style>
+        .container {
+            width: 600px;
+            border: 1px solid black;
+
+            /* Tinggi container akan menyesuaikan tinggi dari konten */
+            overflow: auto;
+        }
+
+        img {
+            width: 500px;
+            float: left;
+        }
+
+        .container2 {
+            border: 1px solid black;
+        }
+
+        .clear {
+            /* clear berfungsi untuk memberhentikan float. valuenya ada 3 yaitu left, right, & both. */
+            clear: left;
+        }
+
+        /**
+        * For modern browsers
+        * 1. The space content is one way to avoid an Opera bug when the
+        *    contenteditable attribute is included anywhere else in the document.
+        *    Otherwise it causes space to appear at the top and bottom of elements
+        *    that are clearfixed.
+        * 2. The use of `table` rather than `block` is only necessary if using
+        *    `:before` to contain the top-margins of child elements.
+        */
+        .cf:before,
+        .cf:after {
+            content: " ";
+            /* 1 */
+            display: table;
+            /* 2 */
+        }
+
+        .cf:after {
+            clear: both;
+        }
+
+        /**
+        * For IE 6/7 only
+        * Include this rule to trigger hasLayout and contain floats.
+        */
+        .cf {
+            *zoom: 1;
+        }
+
+        .container3 {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="../img/Bot Model.png" alt="&nbsp;Box Model">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, officiis?
+        </p>
+    </div>
+
+    <div class="container2">
+        <img src="../img/Bot Model.png" alt="&nbsp;Box Model">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, officiis?
+        </p>
+        <div class="clear">
+            <!-- Penempatan div ini penting karena float tepat diberhentikan di sini, jadi tulisan masih berada di samping gambar misalnya. -->
+        </div>
+    </div>
+
+    <div class="container3 cf">
+        <img src="../img/Bot Model.png" alt="&nbsp;Box Model">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, officiis?
+        </p>
+    </div>
+</body>
+
+</html>
