@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Border Radius</title>
+
+    <style>
+        .satu {
+            width: 300px;
+            height: 300px;
+            background-color: goldenrod;
+
+            /* Untuk membuat lingkaran hanya butuh border-radius setengah dari width dan height box nya. */
+            border-radius: 50%;
+            text-align: center;
+            line-height: 300px;
+        }
+
+        .dua {
+            width: 150px;
+            height: 200px;
+            background-color: lightskyblue;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 150px;
+        }
+
+        .tiga {
+            width: 150px;
+            height: 150px;
+            background-color: orange;
+
+            /* border-top-right-radius: 30px; */
+            /* border-bottom-left-radius: 30px; */
+            /* Sama aja. Searah jarum jam mulai dari atas-kiri */
+            border-radius: 0 50% 0 50%;
+
+            text-align: center;
+            line-height: 150px;
+            background-image: url(../img/spiderman.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .empat {
+            width: 150px;
+            height: 150px;
+            background-color: orange;
+            border-radius: 0 50% 0 50%;
+            text-align: center;
+            line-height: 150px;
+
+            /* Menyembunyikan yang keluar */
+            overflow: hidden;
+        }
+
+        .empat img {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="satu">Tulisan keluar kalau ada border radiusnya</div>
+    <div class="dua">Elips</div>
+    <div class="tiga"></div>
+    <div class="empat">
+        <img src="../img/spiderman.jpg" alt="">
+    </div>
+</body>
+
+</html>
