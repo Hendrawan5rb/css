@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Opacity</title>
+
+    <style>
+        body {
+            background-image: url(../img/leaves.webp);
+        }
+
+        .satu {
+            width: 300px;
+            height: 300px;
+            background-color: tomato;
+
+            /* opacity: 0.7; */
+            /* opacity: .7; */
+            opacity: 70%;
+            position: relative;
+        }
+
+        /* Otomatis mewarisi opacity dari parent-nya */
+        .dua {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+            right: -50px;
+        }
+
+        .tiga {
+            width: 300px;
+            height: 300px;
+            background-color: gold;
+            opacity: 70%;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .empat {
+            width: 100px;
+            height: 100px;
+            background-color: silver;
+            position: absolute;
+            right: -50px;
+
+            /* Supaya yang belakang (parent-nya) kelihatan. */
+            /* 70% dari opacity parent-nya */
+            opacity: 70%;
+        }
+
+        .lima {
+            width: 300px;
+            height: 300px;
+            background-color: darkblue;
+            opacity: 70%;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .enam {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            position: absolute;
+            right: -50px;
+
+            /* Tetap transparan karena ini 100% dari opacity parent-nya yaitu 70%. */
+            opacity: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="satu">
+        <div class="dua"></div>
+    </div>
+
+    <div class="tiga">
+        <div class="empat"></div>
+    </div>
+
+    <div class="lima">
+        <div class="enam"></div>
+    </div>
+</body>
+
+</html>
