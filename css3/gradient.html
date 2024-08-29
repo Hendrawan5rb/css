@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Gradient</title>
+
+    <style>
+        /* Gradient bukan merupakan property CSS3, melainkan adalah value untuk property background-image / background. */
+        /* Bukan merupakan value dari property background-color, supaya bisa menggunakan background-color dan background-image secara bersamaan. */
+
+        .satu {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+
+            /* linear-gradient(sudut | arah, warna-awal, warna akhir) */
+            /*
+
+            Value arah:
+            - to bottom
+            - to top
+            - to left
+            - to right
+
+            - to left top
+            - to left bottom
+            - to right top
+            - to right bottom
+            */
+
+            /* Color Stop: value setelah warna yang berarti warna solid seberapa besar sebelum ber-gradasi. */
+            background-image: linear-gradient(to top right, cyan 30%, magenta 60%, #FFFF00 75%, rgb(0, 0, 0) 15%);
+        }
+
+        .dua {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+
+            /* radial-gradient(<tipe> <jangkauan> at <posisi-y> <posisi-x>, <warna-1>, <warna-2>, ..., <warna-n>); */
+            /* Yang wajib hanya warna-awal dan warna-akhir saja. */
+            /* tipe default adalah ellipse */
+            /*
+            Value jangkauan:
+            - closest-corner: jarak dari pusat gradient ke sudut terdekat elemen.
+            - closest-side: jarak dari pusat gradient ke sisi terdekat elemen.
+            - farthest-corner: jarak dari pusat gradient ke sudut terjauh elemen.
+            - farthest-side: jarak dari pusat gradient ke sisi terjauh elemen. 
+            */
+
+            /* Value posisi adalah value untuk pusat gradient. */
+            /* Value untuk y: top, center, bottom, px */
+            /* Value untuk x: left, center, right, px */
+            background: radial-gradient(circle farthest-corner at top left, red, blue)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="satu"></div>
+    <div class="dua"></div>
+</body>
+
+</html>
