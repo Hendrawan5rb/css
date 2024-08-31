@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+
+    <title>Font Face</title>
+
+    <style>
+        /* Sebelum CSS3, Biasanya orang menggunakan font yang diasumsikan sudah ada di dalam perangkat user(beserta fallback-nya) atau menggunakan layanan seperti Google Fonts.
+        
+        Ekstensi font yang paling cepat di-load untuk website adalah .woff karena dibuat spesifik untuk website. Sedangkan yang paling banyak disupport adalah ttf/otf
+
+        Font dapat di-convert ke .woff dengan Web Font Generator, misalnya di fontsquirrel.com
+
+        Beberapa website layanan font:
+        - fonts.google.com
+        - fontsquirrel.com
+        - fontspring.com
+        - webtype.com
+        - typotheque.com
+        */
+
+        /* Code from Google Fonts */
+        .nerko-one-regular {
+            font-family: "Nerko One", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "SourceCodePro";
+            src: url('../font/SourceCodePro-Regular.otf') format('truetype');
+        }
+
+        h1 {
+            font-family: "SourceCodePro", Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Font Face</h1>
+    <h3 class="nerko-one-regular">Heading 3</h3>
+</body>
+
+</html>
