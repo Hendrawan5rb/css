@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Vendor Prefix</title>
+
+    <style>
+        /* Vendor Prefix adalah sintaks khusus yang harus ditambahkan untuk beberapa property CSS3. Karena beberapa brwoser lama ada yang tidak support beberapa property CSS3. */
+
+        /*
+        -webkit- untuk Chrome, Safari, Opera versi terbaru
+        -moz- untuk Mozilla Firefox
+        -ms- untuk Internet Explorer
+        -o- untuk Opera versi terdahulu
+        */
+
+        /*
+        Jika menggunakan vendor prefix, "sintaks aslinya" tidak dihapus. Misal:
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        */
+
+        /*
+        Untuk mengetahui apakah harus menggunakan vendor prefix atau tidak, bisa gunakan beberapa tools di bawah ini:
+        - shouldiprefix.com
+        - caniuse.com
+        - pleeease.io
+        - emmet (code editor extension) > sebelum tanda ":" tekan tab
+        */
+
+        body {
+            text-align: center;
+        }
+
+        img {
+            width: 400px;
+            filter: grayscale(100%);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../img/spiderman.jpg" alt="&nbsp;Spiderman">
+</body>
+
+</html>
