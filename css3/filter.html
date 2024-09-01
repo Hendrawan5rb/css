@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Filter</title>
+
+    <style>
+        /*
+        Filter adalah property CSS3 yang digunakan untuk memberikan efek visual pada gambar, background, atau border.
+
+        List Filter:
+        - blur (px)
+        - brightness (angka | %)
+        - contrast (angka | %)
+        - saturate (angka | %)
+        - grayscale (angka | %)
+        - sepia (angka | %)
+        - hue-rotate (deg)
+        - invert (angka | %)
+        - opacity (angka | %)
+        - drop-shadow (sama seperti box-shadow)
+        */
+
+        img {
+            width: 300px;
+        }
+
+        #satu {
+            filter: blur(3px);
+        }
+
+        #dua {
+            /* Nilai defaultnya adalah 100% atau 1 */
+            filter: brightness(50%);
+        }
+
+        #tiga {
+            filter: contrast(1.5);
+        }
+
+        #empat {
+            /* Semakin besar saturate-nya, maka gambar akan semakin berwarna. Jika 0, gambar akan menjadi abu-abu. */
+            filter: saturate(200%);
+        }
+
+        #lima {
+            /* Grayscale kebalikan dari saturate, jika 100% maka gambar akan menjadi abu-abu. */
+            filter: grayscale(70%);
+        }
+
+        #enam {
+            /* Mirip seperti Grayscale tapi tidak abu-abu, malainkan kuning. */
+            filter: sepia(90%);
+        }
+
+        #tujuh {
+            /* Putar roda warna sekian derajat searah jarum jam (kalau minus berarti berlawanan arah jarum jam) */
+            filter: hue-rotate(-100deg);
+        }
+
+        #delapan {
+            /* Nilai default-nya adalah 0 */
+            filter: invert(80%);
+        }
+
+        #sembilan {
+            /* Perbedaan antara opacity dan drop-shadow antara versi property CSS dan versi filter adalah versi filter menggunakan hardware user, sedangkan property CSS manggunakan kemampuan browser. Maka menggunakan versi filter akan membuat load lebih cepat. */
+            filter: opacity(.5);
+        }
+
+        #sepuluh {
+            /* Perbedaan antara opacity dan drop-shadow antara versi property CSS dan versi filter adalah versi filter menggunakan hardware user, sedangkan property CSS manggunakan kemampuan browser. Maka menggunakan versi filter akan membuat load lebih cepat. */
+            /* Drop shadow versi filter juga lebih "powerful" karena bisa digunakan untuk text dan juga box. */
+            /* Drop shadow versi filter jika digunakan pada gambar dengan format .png, maka yang akan diberi shadow adalah objek gambar yang tidak transparan (bukan "box" nya) */
+            filter: drop-shadow(5px 5px 5px black);
+        }
+
+        #sebelas:hover {
+            /* Filter bisa digunakan bersama dipisahkan dengan spasi */
+            filter: blur(3px) grayscale(1);
+            transition: 1s;
+        }
+
+        /*
+        Website yang bisa digunakan untuk membantu mencari value filter yang diinginkan: http://github.khronos.org/siggraph2012course/CanvasCSSAndWebGL/demos/CSS_Filters.htm
+        */
+    </style>
+</head>
+
+<body>
+    <img src="../img/spiderman.jpg" alt="&nbsp;Spiderman" id="satu">
+    <img src="../img/spiderman.jpg" alt="&nbsp;Spiderman" id="dua">
+    <img src="../img/spiderman.jpg" alt="&nbsp;Spiderman" id="tiga">
+    <img src="../img/spiderman.jpg" alt="&nbsp;Spiderman" id="empat">
+    <img src="../img/spiderman.jpg" alt="&nbsp;Spiderman" id="lima">
+    <img src="../img/spiderman.jpg" alt="&nbsp;Spiderman" id="enam">
+    <img src="../img/spiderman.jpg" alt="&nbsp;Spiderman" id="tujuh">
+    <img src="../img/spiderman.jpg" alt="&nbsp;Spiderman" id="delapan">
+    <img src="../img/spiderman.jpg" alt="&nbsp;Spiderman" id="sembilan">
+    <img src="../img/spiderman.jpg" alt="&nbsp;Spiderman" id="sepuluh">
+    <img src="../img/spiderman.jpg" alt="&nbsp;Spiderman" id="sebelas">
+</body>
+
+</html>
