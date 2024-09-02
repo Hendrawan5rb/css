@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Transition</title>
+
+    <style>
+        /* Transition adalah property CSS3 yang memungkinkan kita untuk dapat mengubah nilai dari property CSS secara halus (smooth). */
+        /*
+        Perbedaan antara transition dan animation :
+        - Transition hanya memiliki posisi awal dan posisi akhir
+        - Sedangkan Animation memiliki keyframe yang memungkinkan ada "gerakan" di antara posisi awal dan posisi akhir.
+        */
+        /* Ada property yang bisa di animasikan dan ada juga yang tidak. */
+
+        /*
+        transition: property durasi fungsi delay (Yang wajib hanya durasi)
+        - durasi (s/ms)
+        - property (all/nama-property/none) : property apa saja yang diberi transisi. Default value-nya adalah "all".
+        - fungsi, disebut juga timing function (ease/ease-in/ease-out/ease-in-out/linear/cubic-bezier) : default value-nya adalah "ease".
+        - delay(s/ms) : waktu tunggu sebelum transisi
+        */
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .kotak {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            margin: 20px 0;
+        }
+
+        .k1 {
+            /* Simpan property transisi selalu di keadaan awal */
+            transition: margin-left 2s ease;
+            background-color: blueviolet;
+
+        }
+
+        .k2 {
+            transition: margin-left 2s ease-in;
+            background-color: saddlebrown;
+
+        }
+
+        .k3 {
+            transition: margin-left 2s ease-out;
+            background-color: saddlebrown;
+
+        }
+
+        .k4 {
+            transition: margin-left 2s ease-in-out;
+            background-color: royalblue;
+
+        }
+
+        .k5 {
+            /* Transisi-nya akan urut dari awal */
+            transition: margin-left 2s linear, background-color 2s 1s;
+            background-color: purple;
+
+        }
+
+        .k6 {
+            transition: margin-left 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+            background-color: gray;
+
+        }
+
+        .container {
+            width: 900px;
+            margin: 10px auto;
+            border: 1px solid black;
+        }
+
+        /* Di beri pembungkus supaya animasi hover nya tidak patah-patah */
+        .container:hover .kotak {
+            margin-left: 300px;
+            background-color: brown;
+
+            /* transition: 2s; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="kotak k1">ease</div>
+        <div class="kotak k2">ease-in</div>
+        <div class="kotak k3">ease-out</div>
+        <div class="kotak k4">ease-in-out</div>
+        <div class="kotak k5">linear</div>
+        <div class="kotak k6">cubic-bezier</div>
+    </div>
+</body>
+
+</html>
