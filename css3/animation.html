@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Animation</title>
+
+    <style>
+        /* animation: name duration timing-function delay iteration-count direction fill-mode play-state */
+
+        /*
+        - iteration-count (angka/infinite) : jumlah animasi diulang. Default value-nya adalah 1.
+        - direction (normal/reverse/alternate/alternate-reverse) : arah animasinya bergerak
+        - fill-mode (none/forwards/backwards/both) : menentukan akhir dari animasi seperti apa
+        - play-state (running/paused) : Default value-nya running. Paused biasanya digunakan dengan javascript untuk menghentikan animasi di tengah jalan. Bisa juga di tes dengan edit CSS di inspect mode.
+        */
+
+        .kotak {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            margin-top: 20px;
+        }
+
+        /* By default, animation hanya akan dimainkan sekali lalu kembali ke keadaaan awal */
+        .satu:hover {
+            animation: tes 2s;
+        }
+
+        /* Animasi langsung berjalan ketika halaman di-load */
+        .dua {
+            animation: persen 2s 3 alternate forwards;
+            /* animation-name: persen;
+            animation-duration: 2s;
+            animation-iteration-count: 2; */
+        }
+
+        @keyframes tes {
+            from {
+                width: 200px;
+            }
+
+            to {
+                width: 500px;
+            }
+        }
+
+        @keyframes persen {
+            0% {
+                width: 200px;
+            }
+
+            50% {
+                width: 500px;
+                height: 200px;
+            }
+
+            100% {
+                width: 500px;
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kotak satu"></div>
+    <div class="kotak dua"></div>
+</body>
+
+</html>
