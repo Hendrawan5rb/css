@@ -43,6 +43,105 @@
         li {
             display: inline;
         }
+
+        /* Flexbox adalah model layout SATU DIMENSI yang dapat mengatur jarak dan penjajaran antar item dalam sebuah container. SATU DIMENSI artinya hanya dapat mengatur layouting salah satu antara baris (horizontal) atau kolom (vertikal), tidak dapat keduanya. */
+
+        /* Definisi lainnya, Flexbox Layout Module adalah sebuah modul yang menawarkan cara yang efektif untuk menyusun, mensejajarkan, dan mendistribusikan jarak antar item di dalam sebuah container, meskipun ukurannya dinamis atau bahkan kita tidak tahu. */
+
+        /*
+        Istilah dalam Flexbox : 
+        - Container : Wadah atau pembungkus
+        - Items : Elemen dalam container
+        - Main Axis : Sumbu Utama, bisa horizontal, bisa vertikal. Tapi biasanya horizontal. Ditentukan oleh flex-direction property.
+        - Cross Axis : Sumbu yang berpotongan dengan Main Axis
+        - Main Size : Ukuran dari Main Axis yang akan membuat dimensi dari Items-nya relatif terhadap Main Size
+        - Cross Size : Ukuran dari Cross Axis
+        - Main Start : Posisi awal dari elemen pada Main Axis
+        - Main End : Posisi akhir dari elemen pada Main Axis
+        - Cross Start : Posisi awal dari elemen pada Cross Axis
+        - Cross End : Posisi akhir dari elemen pada Cross Axis
+        */
+
+        /*
+        Property pada Container : 
+        - display (flex/inline-flex) : Membuat sebuah elemen parent menjadi Flex Box, dan membuat elemen-elemen di dalamnya bisa berperilaku flex juga.
+        - flex-direction (row/row-reverse/column/column-reverse) : mengatur arah elemennya
+        - flex-wrap (nowrap/wrap/wrap-reverse) : Supaya Items turun kalau sudah tidak muat di container
+        - justify-content (flex-start/flex-end/center/space-between/space-around/space-evenly) : Mengatur rata (alignment) dari Items dalam Container secara horizontal
+        - align-items (flex-start/flex-end/center/stretch/baseline) : Sama kayak justify-content tapi vertikal
+        - align-content (flex-start/flex-end/center/stretch/space-between/space-around) : Sama kayak align-items tapi untuk multiple baris
+        */
+
+        /*
+        Property pada Items : 
+        - order (angka) : Mengatur urutan Items
+        - flex-grow/flex (angka) : Mengatur ukuran dari Items
+        - align-self (auto/flex-start/flex-end/stretch/center/baseline) : Mengatur alignment Items spesifik terhadap Cross Axis.
+        */
+
+        .container {
+            width: 600px;
+            height: 150px;
+            margin: auto;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        .satu {
+            background-color: aquamarine;
+            order: 4;
+        }
+
+        .dua {
+            background-color: blueviolet;
+            order: 2;
+        }
+
+        .tiga {
+            background-color: crimson;
+            order: 1;
+        }
+
+        .empat {
+            background-color: darkseagreen;
+            order: 3;
+        }
+
+        .container-dua {
+            width: 600px;
+            height: 150px;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 20px auto;
+            display: flex;
+        }
+
+        .box-container-dua {
+            margin: auto;
+            background-color: limegreen;
+            border: 3px solid yellowgreen;
+            border-radius: 5px;
+            width: 300px;
+            height: 70px;
+            display: flex;
+        }
+
+        .box-container-dua span {
+            margin: auto;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -116,6 +215,18 @@
         <li><a href="#">Link 5</a></li>
     </ul>
 
+    <div class="container">
+        <div class="box satu"></div>
+        <div class="box dua"></div>
+        <div class="box tiga"></div>
+        <div class="box empat"></div>
+    </div>
+
+    <div class="container-dua">
+        <div class="box-container-dua">
+            <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, officiis.</span>
+        </div>
+    </div>
 </body>
 
 </html>
