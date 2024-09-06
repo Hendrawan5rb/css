@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Columns & Rows</title>
+
+    <style>
+        /*
+        grid-template-columns & grid-template-rows : Mendefinisikan kolom/baris dengan cara menuliskan nilai dipisahkan oleh spasi. Nilai merepresentasikan Grid Track dan spasi merepresentasikan Grid Line.
+
+        grid-template-columns: track-size | line-name track-size
+        grid-template-rows: track-size | line-name track-size
+
+        track-size : bisa berupa px, %, auto, atau fr (fraction)
+        line-name : nama yang diberikan pada track
+
+        line-name bisa menggantikan nomor garis nanti jika ingin di assign ke Grid Item
+        fr (fraction) adalah opsi yang lebih baik ketimbang % untuk membuat website responsive karena dikalkulasi otomatis oleh browser. Nilainya bisa bilangan bulat atau desimal. Misal 1fr 2fr 3.7fr.
+        auto akan mengambil space sisa.
+
+        - Explicit Grid : Kolom dan baris yang secara eksplisit didefinisikan
+        - Implicit Grid : Kolom dan baris otomatis, sisa dari Explisit Grid.
+        Keduanya bisa dilihat di Browser Developer Tools (Inspect) : Explicit Grid yang berada dalam garis solid. GARIS putus putus adalah Explicit Items/Tracks. Sedangkan luar dari garis solid adalah Implicit Items/Tracks (TITIK putus-putus).
+
+        grid-auto-columns & grid-auto-rows : Mengatur ukuran Grid Track yang tidak dituliskan pada grid-template (Implicit Grid) 
+
+        grid-auto-columns : track-size
+        grid-auto-rows : track-size
+
+        Secara default, grid sisa yang melebihi dari grid yang didefinisikan akan turun menjadi baris baru. Maka dari itu, secara default, hanya ada ROW IMPLICIT dan tidak ada COLUMN IMPLICIT. Column implicit bisa ada dengan menggunakan property grid-auto-flow.
+
+        grid-auto-flow : Mengatur penempatan item/cell pada Grid Track, termasuk yang ditulis secara implicit.
+
+        grid-auto-flow : row(default) | column | row dense | column dense
+        */
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            display: grid;
+
+            grid-template-columns: 100px 20%;
+            grid-template-rows: 100px 25% 200px;
+
+            grid-auto-flow: column;
+
+            grid-auto-columns: 500px;
+            /* grid-auto-rows menjadi tidak digunakan karena sekarang auto-flow nya sudah menjadi column */
+            grid-auto-rows: 500px;
+        }
+
+        .item {
+            background-color: salmon;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item:nth-child(even) {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+</body>
+
+</html>
