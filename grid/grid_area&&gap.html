@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+    <title>Grid Area & Gap</title>
+
+    <style>
+        /*
+        grid-template-area : Mendefinisikan grid template menggunakan nama dari area yang ditulis pada property grid-area pada item
+
+        grid-template : Shorthand untuk mendefinisikan grid-template-rows, grid-template-columns, dan grid-template-areas dalam satu deklarasi.
+        
+        grid-template: grid-template-rows | grid-template-areas / grid-template-columns
+
+        gap, column-gap, & row-gap : Mendefinisikan ukuran dari grid-line / jarak antara baris atau kolom
+
+        grid : Shorthand untuk mendefinisikan properti-properti dalam satu deklarasi.
+        */
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            display: grid;
+        }
+
+        .satu {
+            grid-template-areas:
+                'header header header'
+                'sidebar sidebar sidebar'
+                'content content content'
+                'footer footer footer'
+            ;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .dua {
+            grid-template:
+                [baris1-awal] 'header header header' 50px [baris1-akhir baris2-awal] 'footer footer footer' 100px [baris2-ekhir] / 1fr 2fr 3fr;
+        }
+
+        .tiga {
+            grid-template-columns: repeat(3, 1fr);
+            /* row-gap: 10px; */
+            /* column-gap: 5px; */
+            gap: 10px 5px;
+            /* gap: 20px; */
+        }
+
+        .item {
+            width: 100%;
+            background-color: salmon;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .dua .item:nth-child(even) {
+            background-color: aquamarine;
+        }
+
+        .satu .item,
+        .tiga .item {
+            padding: 50px;
+        }
+
+        .header {
+            background-color: salmon;
+            grid-area: header;
+        }
+
+        .sidebar {
+            background-color: darkslategrey;
+            grid-area: sidebar;
+        }
+
+        .content {
+            background-color: teal;
+            grid-area: content;
+        }
+
+        .footer {
+            background-color: black;
+            color: wheat;
+            grid-area: footer;
+        }
+
+        @media screen and (min-width: 576px) {
+            .satu {
+                grid-template-areas:
+                    'header header header'
+                    'sidebar content content'
+                    'sidebar content content'
+                    'footer footer footer'
+                ;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container satu">
+        <div class="item header">Header</div>
+        <div class="item sidebar">Sidebar</div>
+        <div class="item content">Content</div>
+        <div class="item footer">Footer</div>
+    </div>
+
+    <div class="container dua">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+    </div>
+
+    <div class="container tiga">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+</body>
+
+</html>
