@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Special Keywords & Functions</title>
+
+    <style>
+        /*
+        repeat() : Menentukan ukuran Grid Track secara berulang
+        min-content & max-content : Menentukan seberapa besar ukuran Grid Track berdasarkan content pada sebuah item.
+        auto-fill & auto-fit : Menentukan jumlah item untuk berada pada Grid Track. Biasanya digunakan di dalam repeat().
+        minmax() : Menentukan ukuran minimal dan maksimal dari Grid Track. Kalau bisa maksimal, gunakan maksimal. Kalau tidak muat perkecil sampai batas minimal. Cocok untuk membuat layout responsive.
+        */
+
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            border: 1px solid black;
+
+            display: grid;
+        }
+
+        .satu {
+            grid-template-columns: repeat(4, 1fr) repeat(5, 1.5fr);
+        }
+
+        .dua {
+            grid-template-columns: 1fr min-content 1fr;
+        }
+
+        .tiga {
+            grid-template-columns: 1fr max-content 1fr;
+        }
+
+        .empat {
+            grid-template-columns: repeat(auto-fill, 100px);
+        }
+
+        .lima {
+            grid-template-columns: repeat(auto-fit, 100px);
+        }
+
+        .enam {
+            grid-template-columns: repeat(auto-fill, 100px);
+        }
+
+        .tujuh {
+            grid-template-columns: repeat(auto-fit, 100px);
+        }
+
+        .delapan {
+            grid-template-columns: 1fr minmax(200px, 400px) 1fr;
+        }
+
+        .item {
+            background-color: salmon;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item:nth-child(even) {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container satu">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+
+    <div class="container dua">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">min-content</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+
+    <div class="container tiga">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">max-content</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+
+    <div class="container empat">
+        <div class="item">1</div>
+        <div class="item">auto-fill</div>
+    </div>
+
+    <div class="container lima">
+        <div class="item">1</div>
+        <div class="item">auto-fit</div>
+    </div>
+
+    <!-- Bisa otomatis mengisi berapa Items yang muat pada Container. Cocok untuk membuat website responsive. -->
+    <!-- Grid berakhir di posisi seharusnya item terakhir, meskinpun Item-nya belum ada. (Bisa di lihat dengan Browser Developer Tools) -->
+    <div class="container enam">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">auto-fill</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+
+    <!-- Bisa otomatis mengisi berapa Items yang muat pada Container. Cocok untuk membuat website responsive. -->
+    <!-- Grid secara Explicit berakhir di Item terakhir (Bisa di lihat dengan Browser Developer Tools) -->
+    <div class="container tujuh">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">auto-fit</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+
+    <div class="container delapan">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item">minmax()</div>
+        <div class="item">Lorem</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+</body>
+
+</html>
