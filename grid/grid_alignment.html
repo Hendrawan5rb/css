@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Grid Alignment</title>
+
+    <style>
+        /*
+        justify-items : Mensejajarkan grid-items pada sumbu horizontal. Hanya berlaku jika kita TIDAK memberikan lebar pada items. (stretch/end/center/start)
+        align-items : Mensejajarkan grid-items pada sumbu vertikal (stretch/end/center/start)
+        place-items : Shorthand untuk menulis justify-items dan align-items dalam satu deklarasi (align-items justify-items)
+        justify-content : Mengatur posisi seluruh Grid Container pada sumbu horizontal. Ini bisa dilakukan ketika ukuran total grid lebih kecil dari ukuran container-nya, biasanya ketika grid items-nya menggunakan ukuran fixed (px). (start/end/center/stretch/space-around/space-between/space-evenly)
+        align-content : Sama seperti justify-content tapi sumbu vertikal (start/end/center/stretch/space-around/space-between/space-evenly)
+        place-content : Shorthand untuk menulis justify-content dan align-content dalam satu deklarasi (justify-content align-content)
+        */
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            /* margin: auto; */
+            display: grid;
+            grid-template-rows: 130px 130px 130px;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 5px;
+        }
+
+        .satu {
+            /* Default value-nya adalah stretch. Namun jika items memiliki width/height, maka lebar/tinggi nya tidak akan berubah. */
+
+            /* justify-items: stretch; */
+            /* justify-items: end; */
+            /* justify-items: center; */
+            /* justify-items: start; */
+
+            /* align-items: stretch; */
+            /* align-items: end; */
+            /* align-items: center; */
+            /* align-items: start; */
+
+            /* Kalau kedua value-nya sama, maka bisa ditulis cuma satu seperti di bawah ini. */
+            /* place-items: center center; */
+            /* place-items: center; */
+
+            color: darkslateblue;
+        }
+
+        .container-dua {
+            width: 80%;
+            height: 500px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 120px 180px 120px;
+            grid-template-rows: 80px 80px;
+            gap: 5px;
+            background-color: black;
+
+            /* justify-content: space-evenly; */
+            /* align-content: space-evenly; */
+            place-content: space-evenly;
+        }
+
+        .items {
+            border: 1px solid black;
+            height: 100px;
+            background-color: lightblue;
+        }
+
+        .i1,
+        .i4,
+        .i7 {
+            width: 130px;
+            color: darkslategrey;
+        }
+
+        .i2,
+        .i5,
+        .i8 {
+            width: 80px;
+            color: darkslategrey;
+        }
+
+        .i3,
+        .i6,
+        .i9 {
+            width: 170px;
+            color: darkslategrey;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container satu">
+        <div class="items i1">1</div>
+        <div class="items i2">2</div>
+        <div class="items i3">3</div>
+        <div class="items i4">4</div>
+        <div class="items i5">5</div>
+        <div class="items i6">6</div>
+        <div class="items i7">7</div>
+        <div class="items i8">8</div>
+        <div class="items i9">9</div>
+    </div>
+
+    <div class="container-dua">
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+        <div class="items">4</div>
+        <div class="items">5</div>
+        <div class="items">6</div>
+        <div class="items">7</div>
+        <div class="items">8</div>
+        <div class="items">9</div>
+    </div>
+</body>
+
+</html>
