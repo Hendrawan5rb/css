@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../img/favicon-16x16.png" sizes="16x16" />
+
+    <title>Pseudo Element</title>
+
+    <style>
+        /* Pseudo Element adalah Bagian dari sebuah elemen yang dapat kita beri style secara terpisah. Element tersebut ada namun tidak terlihat, layaknya Pseudo Class. Contoh dari Pseudo element seperti huruf pertama, baris pertama, konten sebelum dan sesudah, dll. */
+
+        /* Pseudo class menggunakan : sedangkan Pseudo Element menggunakan :: */
+
+        /*
+        ::before
+        ::after
+        
+        Sebuah Pseudo Element yang memungkinkan kita untuk menambahkan konten (sebelum/sesudah elemen) pada halaman HTML hanya melalui CSS saja (tanpa harus menambahkan pada kode HTML)
+
+        Value content yang bisa digunakan : 
+        - string, bisa berupa tulisan atau entitas unicode yang biasanya digunakan untuk icon/glyph
+        - image, bisa berupa gambar yang tidak dapat di resize atau juga bisa berupa gradient. Jika gambar ingin bisa di resize maka konten "dikosongkan" lalu gambar digunakan sebagai background-image.
+        - kosong, berguna jika akan membuat sebuah elemen baru yang tidak ada tulisannya atau melakukan clearfix
+        - counter, berguna untuk memberi style pada list
+        */
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+        }
+
+        /* Atribut wajib untuk selector ::after adalah content */
+        div::after {
+            content: " World!";
+        }
+
+        div::before {
+            content: "Hi, ";
+        }
+    </style>
+</head>
+
+<body>
+    <h2><a href="pseudo_class.html">Kembali, Pseudo Class</a></h2>
+
+    <div>Hello</div>
+</body>
+
+</html>
