@@ -28,6 +28,8 @@
 
         :first-of-type = element pertama dari sebuah jenis tag
         :last-of-type = element terakhir dari sebuah jenis tag
+
+        :target = Sebuah Pseudo Class yang merepresentasikan sebuah elemen unik dengan id/class yang sama dengan penggalan identifier pada URI (Uniform Resource Identifier). Pseudo Class ini menerapkan style saat "penggalan URI" sama dengan identifier sebuah elemen.
         */
 
         /* style link yang belum di klik */
@@ -83,6 +85,14 @@
         p:last-of-type {
             color: brown;
         }
+
+        :target {
+            background-color: blueviolet;
+        }
+
+        .tiga:target {
+            background-color: brown;
+        }
     </style>
 </head>
 
@@ -114,6 +124,12 @@
         pariatur aut libero debitis repudiandae unde, qui consectetur, labore ipsum temporibus quam? Voluptates aperiam
         commodi quae?
     </p>
+
+    <ul>
+        <li><a href="#satu" id="satu">Satu</a></li>
+        <li><a href="#dua" id="dua">Dua</a></li>
+        <li><a href="#tiga" id="tiga" class="tiga">Tiga</a></li>
+    </ul>
 </body>
 
 </html>
